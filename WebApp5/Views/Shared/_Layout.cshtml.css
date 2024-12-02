@@ -7,6 +7,11 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+button[type="submit"] {
+    z-index: 1000; /* Задаем высокий z-index */
+    position: relative; /* Для применения z-index */
+}
+
 a {
   color: #0077cc;
 }

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Форма ввода данных";
+}
+
+<h2>Введите ваши данные</h2>
+
+<form asp-action="Index" asp-controller="UserInfo" method="post" style="max-width: 600px; margin: auto;" novalidate>
+    <div style="margin-bottom: 15px;">
+        <label for="FirstName">Имя:</label>
+        <input type="text" id="FirstName" name="FirstName" class="form-control" required />
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="LastName">Фамилия:</label>
+        <input type="text" id="LastName" name="LastName" class="form-control" required />
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="Group">Группа:</label>
+        <input type="text" id="Group" name="Group" class="form-control" required />
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label>Оценки:</label>
+        <div style="display: flex; gap: 10px;">
+            <input type="number" name="Grades" class="form-control" placeholder="Оценка 1" min="0" max="100" required />
+            <input type="number" name="Grades" class="form-control" placeholder="Оценка 2" min="0" max="100" required />
+            <input type="number" name="Grades" class="form-control" placeholder="Оценка 3" min="0" max="100" required />
+        </div>
+        <small>Оценки должны быть от 0 до 100.</small>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label>Языки программирования:</label>
+        <select name="ProgrammingLanguages" class="form-control" multiple size="5">
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="C++">C++</option>
+        </select>
+        <small>Удерживайте Ctrl (Cmd для Mac), чтобы выбрать несколько языков.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>

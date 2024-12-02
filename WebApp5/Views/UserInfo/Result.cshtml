@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Result";
+}
+
+<h2>Результаты</h2>
+
+<p>ФИО: @ViewBag.FullName</p>
+<p>Средний балл: @ViewBag.AverageGrade</p>
+<p>Языки программирования: @string.Join(", ", ViewBag.Languages)</p>
+<p>Количество языков: @ViewBag.LanguagesCount</p>
+
+<a asp-action="Index" asp-controller="UserInfo">Вернуться к форме</a>

@@ -1,22 +1,40 @@
-html {
-  font-size: 14px;
+form {
+    font-family: Arial, sans-serif;
 }
 
-@media (min-width: 768px) {
-  html {
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+    input[type="number"] {
+        width: calc(33% - 10px); /* Ширина для полей оценок */
+    }
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
     font-size: 16px;
-  }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+button[type="submit"] {
+    z-index: 1000; /* Задаем высокий z-index */
+    position: relative; /* Для применения z-index */
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
+    button:hover {
+        background-color: #0056b3;
+    }
