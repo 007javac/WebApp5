@@ -1,11 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Добавление служб MVC
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Настройка конвейера HTTP-запросов
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/UserInfo/Error");
@@ -14,12 +14,12 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
+// Маршрутизация
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=UserInfo}/{action=Index}/{id?}");
+
 app.Run();

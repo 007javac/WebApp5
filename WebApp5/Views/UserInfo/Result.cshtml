@@ -1,12 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Result";
+    ViewData["Title"] = "Результаты";
 }
 
-<h2>Результаты</h2>
-
-<p>ФИО: @ViewBag.FullName</p>
-<p>Средний балл: @ViewBag.AverageGrade</p>
-<p>Языки программирования: @string.Join(", ", ViewBag.Languages)</p>
-<p>Количество языков: @ViewBag.LanguagesCount</p>
-
-<a asp-action="Index" asp-controller="UserInfo">Вернуться к форме</a>
+<div class="container mt-5">
+    <h2 class="mb-4">Результаты</h2>
+    <p><strong>ФИО:</strong> @ViewBag.FullName</p>
+    <p><strong>Средний балл:</strong> @ViewBag.AverageGrade</p>
+    <p><strong>Языки программирования:</strong> @string.Join(", ", ViewBag.Languages)</p>
+    <p><strong>Количество языков:</strong> @ViewBag.LanguagesCount</p>
+    <a asp-action="Index" asp-controller="UserInfo" class="btn btn-secondary mt-3">Вернуться к форме</a>
+</div>

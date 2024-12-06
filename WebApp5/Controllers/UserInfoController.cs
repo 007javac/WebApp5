@@ -1,10 +1,11 @@
 using WebApp5.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Linq;
 
 public class UserInfoController : Controller
 {
-
     private readonly ILogger<UserInfoController> _logger;
 
     public UserInfoController(ILogger<UserInfoController> logger)
@@ -17,17 +18,13 @@ public class UserInfoController : Controller
     {
         return View();
     }
-    public IActionResult Privacy()
-    {
-        return View();
-    }
 
     [HttpPost]
     public IActionResult Index(UserInfo userInfo)
     {
         if (ModelState.IsValid)
         {
-            var averageGrade = userInfo.Grades.Average();
+            var averageGrade = userInfo.Grades.Select(g => g.Value).Average();
             var languagesCount = userInfo.ProgrammingLanguages?.Count ?? 0;
 
             ViewBag.FullName = $"{userInfo.LastName} {userInfo.FirstName}";
@@ -37,6 +34,6 @@ public class UserInfoController : Controller
 
             return View("Result");
         }
-        return View();
+        return View(userInfo);
     }
 }

@@ -1,40 +1,23 @@
 form {
-    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input, select, button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-    input[type="number"] {
-        width: calc(33% - 10px); /* Ширина для полей оценок */
-    }
 
 button {
     background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button[type="submit"] {
-    z-index: 1000; /* Задаем высокий z-index */
-    position: relative; /* Для применения z-index */
+    color: #fff;
+    font-weight: bold;
 }
 
     button:hover {
         background-color: #0056b3;
     }
+
+input, select {
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+small {
+    color: #6c757d;
+}
